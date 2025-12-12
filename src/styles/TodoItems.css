@@ -1,0 +1,44 @@
+.list-container .list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    font-size: 20px;
+    color: black;
+    letter-spacing: 1px;
+    font-weight: 800;
+    border-radius: 8px;
+}
+
+
+
+.list-container .list:hover {
+    transform: scale(1.01);
+    transition: 0.3s ease-in-out;
+}
+
+.list-container .list:hover {
+    p {
+        color: white;
+        transition: 0.3s ease-in;
+    }
+}
+
+.list .delete-list {
+    display: flex;
+    align-items: center;
+    background-color: red;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.list:hover {
+    .delete-list {
+        opacity: 1;
+        visibility: visible;
+        transition: 0.3s ease-in-out;
+    }
+}

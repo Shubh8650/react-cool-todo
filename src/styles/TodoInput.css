@@ -1,0 +1,36 @@
+.todo-input {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 8px 0;
+}
+
+.todo-input input {
+    width: 60%;
+    padding: 8px 12px;
+    font-size: 20px;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+}
+
+.todo-input input:focus {
+    border: none;
+    outline: none;
+}
+
+.todo-input .add {
+    border: none;
+    background: black;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer
+}
+
+.todo-input .add:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+    background: rgb(12, 16, 226)
+}
