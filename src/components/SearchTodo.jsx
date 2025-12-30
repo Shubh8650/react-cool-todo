@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import useDebounce from "./useDebounce";
+import "../styles/SearchTodo.css";
+import { IoSearch } from "react-icons/io5";
 
 const SearchTodo = ({ setSearchText }) => {
   const [value, setValue] = useState("");
@@ -11,14 +13,16 @@ const SearchTodo = ({ setSearchText }) => {
   }, [debouncedValue, setSearchText]);
 
   return (
-    <>
+    <div className="search-wrapper">
       <input
+        className="search-input"
         type="text"
         placeholder="Search your task..."
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-    </>
+      <IoSearch className="search-icon" />
+    </div>
   );
 };
 

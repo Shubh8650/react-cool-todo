@@ -11,13 +11,25 @@ function App() {
   const [todoList, setTodoList] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  const addTodo = useCallback((text) => {
-    let col = Math.floor(Math.random() * colors.length);
-    setTodoList((prev) => [
-      ...prev,
-      { id: Date.now(), text, colour: colors[col] },
-    ]);
-  }, []);
+  const addTodo = useCallback(
+    (text) => {
+      const textMatched = todoList.some(
+        (item) => item.text.toLowerCase() === text.toLowerCase()
+      );
+
+      if (textMatched) {
+        alert("Item already exists!");
+        return;
+      }
+
+      let col = Math.floor(Math.random() * colors.length);
+      setTodoList((prev) => [
+        ...prev,
+        { id: Date.now(), text, colour: colors[col] },
+      ]);
+    },
+    [todoList]
+  );
 
   const handleDelete = useCallback(
     (id) => {
@@ -26,7 +38,12 @@ function App() {
     },
     [todoList]
   );
-  console.log(searchText, "searchText");
+
+  const handleUpdate = (id, text) => {
+    setTodoList(
+      todoList.map((item) => (item.id === id ? { ...item, text } : item))
+    );
+  };
 
   // wrapped under use meno as it shpuld not unnessary re-rendered
   const filteredTodoList = useMemo(() => {
@@ -50,6 +67,7 @@ function App() {
         <TodoList
           filteredTodoList={filteredTodoList}
           handleDelete={handleDelete}
+          handleUpdate={handleUpdate}
         />
       </div>
       {todoList.length > 0 && (

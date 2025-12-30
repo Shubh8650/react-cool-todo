@@ -1,0 +1,18 @@
+.search-input {
+    width: 100%;
+    font-size: 18px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+}
+
+.search-wrapper {
+    position: relative;
+    width: 300px;
+    background-color: red;
+}
+
+.search-icon {
+    position: absolute;
+    transform: translateY(-50%);
+}
