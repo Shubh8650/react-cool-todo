@@ -2,14 +2,18 @@ import React from "react";
 import "../styles/TodoList.css";
 import TodoItem from "./TodoItem";
 
-const TodoList = ({ todoList, handleDelete }) => {
-  console.log("todo-list rerendered");
+const TodoList = ({ filteredTodoList, handleDelete, handleUpdate }) => {
   return (
     <>
-      {todoList.length > 0 && (
+      {filteredTodoList.length > 0 && (
         <div className="list-container">
-          {todoList.map((todo) => (
-            <TodoItem key={todo.id} todo={todo} handleDelete={handleDelete} />
+          {filteredTodoList.map((todo) => (
+            <TodoItem
+              key={todo.id}
+              todo={todo}
+              handleDelete={handleDelete}
+              handleUpdate={handleUpdate}
+            />
           ))}
         </div>
       )}

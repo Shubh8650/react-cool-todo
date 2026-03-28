@@ -34,3 +34,13 @@
     transition: 0.3s ease-in-out;
     background: rgb(12, 16, 226)
 }
+
+.todo-input .search {
+    border: none;
+    background: rgb(224, 28, 149);
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer
+}

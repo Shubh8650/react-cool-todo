@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import "../styles/TodoInput.css";
 import { MdAdd } from "react-icons/md";
+// import { IoSearch } from "react-icons/io5";
 
 const TodoInput = ({ addTodo }) => {
   const [text, setText] = useState("");
@@ -26,6 +27,7 @@ const TodoInput = ({ addTodo }) => {
       handleAdd();
     }
   };
+
   return (
     <>
       <div className="todo-input">
@@ -39,6 +41,9 @@ const TodoInput = ({ addTodo }) => {
         <button className="add" onClick={handleAdd}>
           <MdAdd size={24} color="white" />
         </button>
+        {/* <button className="search" onClick={handleSearch}>
+          <IoSearch size={24} color="white" />
+        </button> */}
       </div>
     </>
   );
